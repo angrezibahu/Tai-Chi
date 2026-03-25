@@ -17,7 +17,7 @@ export const lessons: Lesson[] = [
     description:
       'Begin your tai chi journey with the fundamental standing posture (Wuji) and Opening Form. Learn to root your feet, align your spine, and calm the mind through natural breathing.',
     duration: '8 min',
-    youtubeVideoId: 'PLACEHOLDER_1',
+    youtubeVideoId: 'jO0Y8e9phHg',
     movesIntroduced: ['Wuji Standing', 'Opening Form'],
     keyPrinciples: [
       'Stand with feet shoulder-width apart',
@@ -38,7 +38,7 @@ export const lessons: Lesson[] = [
     description:
       'Deepen your Wuji standing practice and learn weight shifting from side to side. Feel the connection between your feet and the earth.',
     duration: '10 min',
-    youtubeVideoId: 'PLACEHOLDER_2',
+    youtubeVideoId: 'C0oAPs8fKgI',
     movesIntroduced: ['Weight Shifting', 'Empty Step'],
     keyPrinciples: [
       'Feel the weight transfer through the feet',
@@ -58,7 +58,7 @@ export const lessons: Lesson[] = [
     description:
       'Learn the graceful arm movements of Raising Hands (Lifting Water). Your arms float upward like they are rising through water, guided by breath.',
     duration: '10 min',
-    youtubeVideoId: 'PLACEHOLDER_3',
+    youtubeVideoId: 'f0MG2FCLUsw',
     movesIntroduced: ['Raising Hands', 'Lowering Hands'],
     keyPrinciples: [
       'Arms rise and fall with the breath',
@@ -78,7 +78,7 @@ export const lessons: Lesson[] = [
     description:
       'Introduce the foundational Ward Off (Peng) energy, the first of the Eight Gates. Ward Off is an expansive, buoyant energy like holding a large ball.',
     duration: '12 min',
-    youtubeVideoId: 'PLACEHOLDER_4',
+    youtubeVideoId: '96aWAOVNtCw',
     movesIntroduced: ['Ward Off (Peng)', 'Bow Stance'],
     keyPrinciples: [
       'Peng energy is round and expansive',
@@ -98,7 +98,7 @@ export const lessons: Lesson[] = [
     description:
       'Learn Roll Back (Lu), the yielding complement to Ward Off. Practice the interplay of Peng and Lu — advancing and retreating like ocean waves.',
     duration: '12 min',
-    youtubeVideoId: 'PLACEHOLDER_5',
+    youtubeVideoId: '4sWKwtnNxpM',
     movesIntroduced: ['Roll Back (Lu)'],
     keyPrinciples: [
       'Lu redirects force rather than resisting it',
