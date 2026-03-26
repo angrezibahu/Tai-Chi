@@ -17,12 +17,14 @@ export function LessonPlayer({ videoId, title }: Props) {
   return (
     <div className="w-full aspect-video rounded-2xl overflow-hidden zen-fade-in shadow-sm">
       <iframe
-        src={`https://www.youtube-nocookie.com/embed/${videoId}?rel=0&modestbranding=1`}
+        src={`https://www.youtube-nocookie.com/embed/${encodeURIComponent(videoId)}?rel=0&modestbranding=1`}
         title={title}
         allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
         allowFullScreen
+        sandbox="allow-scripts allow-same-origin allow-presentation allow-popups"
         className="w-full h-full border-0"
         loading="lazy"
+        referrerPolicy="no-referrer"
       />
     </div>
   );

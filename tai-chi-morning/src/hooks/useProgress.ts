@@ -101,11 +101,40 @@ export function useProgress() {
 
   const importData = useCallback((json: string) => {
     try {
-      const data = JSON.parse(json) as ProgressData;
-      if (data.completedLessons && typeof data.currentLesson === 'number') {
-        setProgress(data);
-        return true;
-      }
+      const data = JSON.parse(json);
+      if (
+        !Array.isArray(data?.completedLessons) ||
+        typeof data?.currentLesson !== 'number' ||
+        data.currentLesson < 1 ||
+        data.currentLesson > 20
+      ) return false;
+
+      const validLessons = data.completedLessons.every(
+        (l: unknown): l is LessonProgress =>
+          typeof l === 'object' && l !== null &&
+          typeof (l as LessonProgress).lessonId === 'number' &&
+          (l as LessonProgress).lessonId >= 1 &&
+          (l as LessonProgress).lessonId <= 20 &&
+          typeof (l as LessonProgress).completedAt === 'string' &&
+          !isNaN(Date.parse((l as LessonProgress).completedAt)) &&
+          typeof (l as LessonProgress).practiceMinutes === 'number' &&
+          (l as LessonProgress).practiceMinutes >= 0 &&
+          ((l as LessonProgress).journal === undefined ||
+            typeof (l as LessonProgress).journal === 'string')
+      );
+      if (!validLessons) return false;
+
+      const sanitized: ProgressData = {
+        completedLessons: data.completedLessons.map((l: LessonProgress) => ({
+          lessonId: l.lessonId,
+          completedAt: l.completedAt,
+          practiceMinutes: l.practiceMinutes,
+          ...(l.journal !== undefined ? { journal: l.journal } : {}),
+        })),
+        currentLesson: data.currentLesson,
+      };
+      setProgress(sanitized);
+      return true;
     } catch { /* ignore */ }
     return false;
   }, []);
